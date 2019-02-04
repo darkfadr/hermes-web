@@ -1,0 +1,13 @@
+.email-meta{
+  height: 60px;
+  display: flex;
+  box-shadow: inset 0 0px 12px rgba(0,0,0,0.08);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.15) */
+}
+.email-body {
+  width: 100% !important;
+  height: 100% !important;
+}
+iframe {
+  border: none;
+}

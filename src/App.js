@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
+import Header from './components/header';
+import Sidebar from "./components/sidebar";
+import Toolbar from './components/toolbar';
+import Email from './components/email';
 import logo from './logo.svg';
 import './App.css';
+
+const emails = [
+  { subject: 'Hello world', to: 'test@gmail.com', opened: false },
+  { subject: 'Hello world', to: 'test@gmail.com', opened: true },
+  { subject: 'Hello world', to: 'test@gmail.com', opened: false },
+  { subject: 'Hello world', to: 'somereally_longnameforaperson@gmail.com', opened: true },
+  { subject: '[URGENT] - US - Company Corp - John Doe - Please process this personal record', to: 'test@gmail.com', opened: true },
+  { subject: 'Hello world', to: 'test@email.com', opened: false }
+] ;
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header/>
+        <div className="container">
+          <Sidebar emails={emails} />
+          <div className="message-view">
+            <Toolbar />
+            <Email {...emails[4]}/>
+          </div>
+        </div>
       </div>
     );
   }
